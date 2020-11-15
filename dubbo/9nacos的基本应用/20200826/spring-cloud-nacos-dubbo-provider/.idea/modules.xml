@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/nacos-dubbo-provider/nacos-dubbo-provider.iml" filepath="$PROJECT_DIR$/nacos-dubbo-provider/nacos-dubbo-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nacos-dubbo-provider-api/nacos-dubbo-provider-api.iml" filepath="$PROJECT_DIR$/nacos-dubbo-provider-api/nacos-dubbo-provider-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-nacos-dubbo-provider.iml" filepath="$PROJECT_DIR$/spring-cloud-nacos-dubbo-provider.iml" />
+    </modules>
+  </component>
+</project>
