@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans.xsd        http://code.alibabatech.com/schema/dubbo        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    <dubbo:application name="dubbo-server"/>
+
+    <!--<dubbo:registry address="N/A"/>
+
+    <dubbo:reference id="sayHelloService" interface="com.dubbo.learn.ISayHelloService"
+                     url="dubbo://192.168.56.1:20880/com.dubbo.learn.ISayHelloService"/>-->
+
+    <!--<dubbo:registry address="N/A"/>-->
+    <!--<dubbo:registry address="zookeeper://127.0.0.1:2181"/>-->
+    <dubbo:registry address="nacos://127.0.0.1:8848" timeout="10000"/>
+
+    <dubbo:reference id="sayHelloService" interface="com.dubbo.learn.ISayHelloService"/>
+
+
+</beans>
