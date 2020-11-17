@@ -1,0 +1,23 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: nacos-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: nacos-gateway-provider
+          uri: lb://nacos-provider
+          predicates:
+            - Path=/provider/**
+        - id: nacos-gateway-consumer
+          uri: lb://nacos-consumer
+          predicates:
+            - Path=/**

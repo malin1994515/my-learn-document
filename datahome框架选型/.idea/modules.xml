@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/datahome框架选型.iml" filepath="$PROJECT_DIR$/.idea/datahome框架选型.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nacos-gateway/nacos-gateway.iml" filepath="$PROJECT_DIR$/nacos-gateway/nacos-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nacos-provider/nacos-provider.iml" filepath="$PROJECT_DIR$/nacos-provider/nacos-provider.iml" />
+    </modules>
+  </component>
+</project>
