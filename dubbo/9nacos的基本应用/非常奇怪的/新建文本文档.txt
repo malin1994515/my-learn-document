@@ -1,0 +1,4 @@
+这个 springcloud nacos discovery 的项目就能注册到nacos上。。
+
+
+外面的那个已有的 pom.xml application.properties Application.java 硬是注册到nacos

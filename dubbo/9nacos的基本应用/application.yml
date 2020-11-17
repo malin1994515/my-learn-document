@@ -1,0 +1,51 @@
+server:
+  servlet:
+    encoding:
+      charset: utf-8
+      enabled: true
+      force: true
+
+spring:
+  resources:
+    static-locations: classpath:/META-INF/resources/, classpath:/resources/, classpath:/static/, classpath:/public/, classpath:/web/, file:${default.project-path}/file
+  mvc:
+    static-path-pattern: /**
+  redis:
+    password: datahome123
+    port: 6379
+    # 连接超时时间(毫秒)
+    timeout: 3600
+    cluster:
+      # 设置为0可以让master宕机后，slave马上成为master
+      max-redirects: 5
+      # 集群节点
+      nodes: 172.31.90.86:6379,172.31.90.86:6380,172.31.90.86:6381,172.31.90.86:6382,172.31.90.86:6383,172.31.90.86:6384
+    lettuce:
+      pool:
+        max-active: 300
+        # 最大空闲数，数据库连接的最大空闲时间。超过空闲时间，数据库连接将被标记为不可用，然后被释放。设为0表示无限制
+        max-idle: 300
+        min-idle: 10
+        # 最大建立连接等待时间。如果超过此时间将接到异常。设为-1表示无限制。
+        max-wait: 1000
+        time-between-eviction-runs: 1800000
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://127.0.0.1:5432/demo
+    username: postgres
+    password: 123456
+  flyway:
+    baseline-on-migrate: true
+    locations: classpath:db/migration,classpath:db/migration-mock
+    check-location: true
+  cloud:
+    nacos:
+      config:
+        group: shmec_age06_rc_group
+        file-extension: yaml
+
+logging:
+  level:
+    com.datahome.rc.dao: debug
+
+info: 我是开发环境    

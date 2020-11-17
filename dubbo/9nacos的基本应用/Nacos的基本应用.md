@@ -325,7 +325,7 @@ public class Application {
 ```xml
 <dependency>
 	<groupId>com.alibaba.cloud</groupId>
-    <artifact>spring-cloud-starter-alibaba-nacos-config</artifact>
+    <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
     <version>2.2.1.RELEASE</version>
 </dependency>
 ```
@@ -414,7 +414,7 @@ ${prefix}-${spring.profiles.active}.${file-extension}
 ```java
 @RestController
 @NacosPropertySource(dataId="spring-cloud-dubbo-sample-provider", autoRefreshed=true)
-public class TestController {
+public class TestController {v 
     @NacosValue(value="{info:default value}"}, autoRefreshed=true)
     private String info;
     
@@ -506,3 +506,31 @@ IDEA创建SpringCloud Alibaba工程https://blog.csdn.net/qq_38857854/article/det
 
 
 Idea2020.2卡死在reading maven projects：https://blog.csdn.net/chen462488588/article/details/108282603
+
+
+
+nacos+spring boot 配置中心：https://www.cnblogs.com/july-sunny/p/13586840.html
+
+
+
+nacos+spring boot 注册中心：
+
+- https://nacos.io/zh-cn/docs/quick-start-spring-boot.html  只有手动注册，而不是预计的自动注册
+- https://github.com/nacos-group/nacos-examples/tree/master/nacos-spring-boot-example/nacos-spring-boot-discovery-example
+- http://www.iocoder.cn/Spring-Boot/registry-nacos/?self 这个是自动注册的，但是缺陷还很大。loadbalance，容错都没有只是一个简单的注册中心。
+
+
+
+nacos+spring cloud alibaba
+
+- http://www.iocoder.cn/Spring-Cloud-Alibaba/Nacos-Discovery/ 这个还行
+
+
+
+Idea 社区版安装Spring Boot创建插件
+
+- https://blog.csdn.net/crazilyer/article/details/80313323
+
+
+
+- 引入 Spring Boot、Spring Cloud、Spring Cloud Alibaba 三者 BOM 文件，进行依赖版本的管理，防止不兼容。在 https://dwz.cn/mcLIfNKt 文章中，Spring Cloud Alibaba 开发团队推荐了三者的依赖关系
