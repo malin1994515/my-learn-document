@@ -1,0 +1,28 @@
+version: '2'
+services:
+  zookeeper:
+    image: "zookeeper"
+    hostname: "zookeeper.local"
+    container_name: "zookeeper"
+    #设置网络别名
+    networks:
+      local:
+        aliases:
+          - "zookeeper.local"
+  kafka:
+    image: "wurstmeister/kafka"
+    hostname: "kafka.local"
+    container_name: "kafka"
+    ports:
+      - "9092:9092"
+    networks:
+      local:
+        aliases:
+          - "kafka.local"
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: kafka.local
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+#设置网络，名为local
+networks:
+  local:
+    driver: bridge
