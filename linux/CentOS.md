@@ -15,3 +15,11 @@ https://gper.club/articles/7e7e7f7ff7g58gc1g6e
 # vmware 和 docker冲突
 
 https://blog.csdn.net/hgdkmh/article/details/88665755
+
+
+
+# network.service: control process exited, code=exited status=1
+
+设置固定IP后，重启机器发现 ens-33 网卡没了。
+
+https://www.cnblogs.com/duzhaoqi/p/7283144.html

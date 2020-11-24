@@ -47,6 +47,12 @@ docker-compose -f docker-compose-windows.yml up
 
 
 
+## 集成Spring
+
+- https://blog.csdn.net/qq_30166123/article/details/89705385
+
+
+
 # Spring Boot集成
 
 https://github.com/spring-projects/spring-kafka
@@ -146,6 +152,16 @@ bash-4.4# kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic to
 ```
 
 
+
+# Linux 安装 kafka 集群
+
+https://kafka.apachecn.org/quickstart.html
+
+整体感觉挺简单的，按照Quick Start 很快就搭建好了。
+
+
+
+> 但是不知道为什么 执行命令 非常慢。可能是机器配置很低，没工夫换配置高的机器来验证。
 
 # FAQ
 
