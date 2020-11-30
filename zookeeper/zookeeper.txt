@@ -1,0 +1,62 @@
+安装
+----------------------------------------
+https://zookeeper.apache.org/releases.html#download
+cd /datahome/installation/
+tar -zxvf apache-zookeeper-3.6.1-bin.tar.gz
+mv apache-zookeeper-3.6.1-bin /datahome/zookeeper-3.6.1
+
+
+基本配置
+----------------------------------------
+vi /datahome/zookeeper-3.6.1/conf/zoo.cfg
+tickTime=2000
+initLimit=10
+syncLimit=5
+dataDir=/datahome/zookeeper-3.6.1/data
+clientPort=2181
+maxClientCnxns=0
+admin.enableServer=false
+server.1=172.31.90.93:2888:3888
+server.2=172.31.90.94:2888:3888
+server.3=172.31.90.95:2888:3888
+
+
+JVM配置
+----------------------------------------
+vi /datahome/zookeeper-3.6.1/conf/java.env
+#!/bin/sh
+export JVMFLAGS="-Xms4096m -Xmx4096m $JVMFLAGS"
+
+
+日志配置
+----------------------------------------
+vi /datahome/zookeeper-3.6.1/conf/log4j.properties
+zookeeper.log.dir=/datahome/zookeeper-3.6.1/log
+
+
+创建目录[各个节点逐一创建]
+----------------------------------------
+mkdir -p /datahome/zookeeper-3.6.1/data
+cd /datahome/zookeeper-3.6.1/data
+touch myid && echo 1 > myid
+
+
+环境变量[各个节点逐一增加]
+----------------------------------------
+export ZOOKEEPER_HOME=/datahome/zookeeper-3.6.1
+export PATH=$ZOOKEEPER_HOME/bin:$PATH
+
+
+启动[各个节点需要逐一启动]
+----------------------------------------
+/datahome/zookeeper-3.6.1/bin/zkServer.sh start
+/datahome/zookeeper-3.6.1/bin/zkServer.sh status
+/datahome/zookeeper-3.6.1/bin/zkServer.sh stop
+
+
+客户端连接服务端
+----------------------------------------
+/datahome/zookeeper-3.6.1/bin/zkCli.sh -server localhost:2181
+ls /	//查看根目录
+get		//查看数据
+quit	//退出
