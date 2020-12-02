@@ -1,0 +1,53 @@
+package com.malin.netty.demo.model;
+
+import java.io.File;
+import java.io.Serializable;
+
+public class UploadFile implements Serializable {
+    private static final long serialVersionUID = 1L;
+    private File file;
+    private String fileName;
+    private int startPos;
+    private byte[] bytes;
+    private int endPos;
+
+    public File getFile() {
+        return file;
+    }
+
+    public void setFile(File file) {
+        this.file = file;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
+    public int getStartPos() {
+        return startPos;
+    }
+
+    public void setStartPos(int startPos) {
+        this.startPos = startPos;
+    }
+
+    public byte[] getBytes() {
+        return bytes;
+    }
+
+    public void setBytes(byte[] bytes) {
+        this.bytes = bytes;
+    }
+
+    public int getEndPos() {
+        return endPos;
+    }
+
+    public void setEndPos(int endPos) {
+        this.endPos = endPos;
+    }
+}
