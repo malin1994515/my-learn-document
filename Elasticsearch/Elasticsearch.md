@@ -203,6 +203,44 @@ GET /accounts/_search
 
 
 
+# Spring Boot 整合Elasticsearch
+
+- https://www.jianshu.com/p/1fbfde2aefa5
+
+
+
+## `pom.xml`
+
+```xml
+<dependency>
+    <groupId>org.elasticsearch.client</groupId>
+    <artifactId>elasticsearch-rest-high-level-client</artifactId>
+    <version>7.4.0</version>
+    <exclusions>
+        <exclusion>
+            <groupId>org.elasticsearch</groupId>
+            <artifactId>elasticsearch</artifactId>
+        </exclusion>
+        <exclusion>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>elasticsearch-rest-client</artifactId>
+        </exclusion>
+    </exclusions>
+</dependency>
+<dependency>
+    <groupId>org.elasticsearch.client</groupId>
+    <artifactId>elasticsearch-rest-client</artifactId>
+    <version>7.4.0</version>
+</dependency>
+<dependency>
+    <groupId>org.elasticsearch</groupId>
+    <artifactId>elasticsearch</artifactId>
+    <version>7.4.0</version>
+</dependency>
+```
+
+
+
 # FAQ
 
 ## can not run elasticsearch as root
