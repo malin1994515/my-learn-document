@@ -241,6 +241,60 @@ GET /accounts/_search
 
 
 
+# ElasticSearch 其他
+
+## 禁止自动创建索引
+
+https://www.elastic.co/guide/cn/elasticsearch/guide/current/_creating_an_index.html
+
+```shell
+action.auto_create_index: false
+```
+
+
+
+7.1 版本
+
+https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-index_.html
+
+```shell
+PUT _cluster/settings
+{
+  "persistent": {
+    "action.auto_create_index": "false" 
+  }
+}
+```
+
+## Mapping Type
+
+https://blog.csdn.net/ZYC88888/article/details/83059040
+
+```tex
+
+字段类型概述
+一级分类	二级分类	具体类型
+核心类型	字符串类型	string,text,keyword
+整数类型	integer,long,short,byte
+浮点类型	double,float,half_float,scaled_float
+逻辑类型	boolean
+日期类型	date
+范围类型	range
+二进制类型	binary
+复合类型	数组类型	array
+对象类型	object
+嵌套类型	nested
+地理类型	地理坐标类型	geo_point
+地理地图	geo_shape
+特殊类型	IP类型	ip
+范围类型	completion
+令牌计数类型	token_count
+附件类型	attachment
+抽取类型	percolator
+```
+
+
+
 # FAQ
 
 ## can not run elasticsearch as root
