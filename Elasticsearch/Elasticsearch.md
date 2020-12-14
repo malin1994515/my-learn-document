@@ -299,7 +299,9 @@ https://www.elastic.co/guide/en/elasticsearch/client/index.html
 
 
 
+# Elasticsearch Mapping
 
+https://blog.csdn.net/w1346561235/article/details/100894528
 
 
 
