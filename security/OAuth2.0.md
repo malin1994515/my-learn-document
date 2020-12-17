@@ -58,3 +58,20 @@
 ### 密码(password)
 
 ### 客户端(client credentials)
+
+
+
+# 实例
+
+## 授权码(authorization code)
+
+实例: https://github.com/malin1994515/my-learn-document/tree/master/security/authorization_code
+
+
+
+| 名称        | 类型       | 端口 |
+| ----------- | ---------- | ---- |
+| auth-server | 授权服务器 | 8080 |
+| user-server | 资源服务器 | 8081 |
+| client-app  | 第三方应用 | 8082 |
+
