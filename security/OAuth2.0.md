@@ -2,11 +2,12 @@
 
 - http://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html
   - 理解OAuth 2.0
-
 - http://www.ruanyifeng.com/blog/2019/04/oauth_design.html
   - 用类比的方式介绍了OAuth 2.0
 - http://www.ruanyifeng.com/blog/2019/04/oauth-grant-types.html
   - OAuth 2.0 的四种方式
+- https://www.w3cschool.cn/oauth2/ukx21ja1.html
+  - OAuth 2.0 的中文简介
 
 
 
