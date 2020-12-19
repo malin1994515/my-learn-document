@@ -89,3 +89,31 @@ auth-server 关于 oauth 堆外暴露的端点
 | /oauth/error          | 授权出错的端点                                               |
 | /oauth/check_token    | 校验 access_token 的端点                                     |
 | /oauth/token_key      | 提供公钥的端点                                               |
+
+
+
+## 简化(implicit)
+
+
+
+## 密码(password)
+
+
+
+## 客户端(client credentials)
+
+
+
+## 整合 redis + postgresql 存储应用和token信息
+
+
+
+## 整合 jwt 实现无状态
+
+
+
+## 配合实现SSO
+
+
+
+## 使用github 登录
