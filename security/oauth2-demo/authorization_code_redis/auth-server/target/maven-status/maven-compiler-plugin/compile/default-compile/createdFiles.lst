@@ -1,0 +1,4 @@
+com\example\authserver\config\AuthorizationServer.class
+com\example\authserver\config\SecurityConfig.class
+com\example\authserver\config\AccessTokenConfig.class
+com\example\authserver\AuthServerApplication.class
