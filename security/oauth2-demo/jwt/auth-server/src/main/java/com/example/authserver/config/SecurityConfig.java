@@ -2,6 +2,7 @@ package com.example.authserver.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -18,20 +19,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-
         auth.inMemoryAuthentication()
-                .withUser("admin")
-                .password(passwordEncoder.encode("123456"))
+                .withUser("sang")
+                .password(new BCryptPasswordEncoder().encode("123"))
                 .roles("admin")
                 .and()
-                .withUser("malin")
-                .password(passwordEncoder.encode("123456"))
-                .roles("student");
+                .withUser("javaboy")
+                .password(new BCryptPasswordEncoder().encode("123"))
+                .roles("user");
     }
 
     @Override
-    public void configure(HttpSecurity http) throws Exception {
+    @Bean
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
+    }
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable().formLogin();
     }
 }
