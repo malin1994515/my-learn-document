@@ -22,3 +22,9 @@ https://blog.csdn.net/qq_36160730/article/details/105435473
 > 类似 XML Schema 用于校验JSON的字段。
 
 https://www.jianshu.com/p/1711f2f24dcf?utm_campaign=hugo
+
+
+
+# Spring Validation 编程式校验
+
+https://segmentfault.com/a/1190000023471742

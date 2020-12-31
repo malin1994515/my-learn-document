@@ -8,6 +8,8 @@
   - OAuth 2.0 的四种方式
 - https://www.w3cschool.cn/oauth2/ukx21ja1.html
   - OAuth 2.0 的中文简介
+- https://oauth.net/2/grant-types/password/
+  - 官网
 
 
 
@@ -20,6 +22,8 @@
 - https://blog.csdn.net/u012702547/article/details/105699777
   - 这个最全 并且github上有多种实现方式(最终参考这个Demo实现)
     - https://github.com/lenve/oauth2-samples
+- password 模式实现
+  - https://www.cnblogs.com/mzq123/p/13094747.html
 
 
 
@@ -427,3 +431,37 @@ public class HelloController {
 
 
 ## 使用github 登录
+
+
+
+# FAQ
+
+## 账号密码正确的情况下出现403
+
+因为spring security 默认对于密码进行了Base64的编码，如果不使用`BCycePasswordEncoder`对密码进行ender处理就会出现。
+
+`Encoded password does not look like BCrypt`
+
+如果本地测试想使用明文密码可以使用 `String password = "{noop}123456"` 
+
+
+
+## 客户端模式无法刷新 Token
+
+> 因为客户端授权模式存在一定的风险。从把 refresh token 藏藏掖掖的收起来。就能猜到OAuth并不想在这种模式下让客户端刷新token。
+
+1、重构源码部分参数
+
+https://blog.csdn.net/hry2015/article/details/96382707
+
+
+
+2、简单直接给一个超长的过期时间
+
+
+
+3、其实OAuth 已经生成了 refresh token只是没有显示出来，用Redis作为token存储的时候能够看到。并且也能刷新。
+
+![image-20201229143807943](OAuth2.0.assets/image-20201229143807943.png)
+
+![image-20201229143824704](OAuth2.0.assets/image-20201229143824704.png)
