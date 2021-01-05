@@ -11,14 +11,23 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.provisioning.JdbcUserDetailsManager;
 
+import javax.annotation.Resource;
+import javax.sql.DataSource;
 import java.io.PrintWriter;
 
 @Configuration
 @EnableWebSecurity // 使用Spring Boot时已经自动装配过，个人喜好显示的写出来。
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Resource
+    DataSource dataSource;
+
     @Bean
     PasswordEncoder passwordEncoder() {
         // return new BCryptPasswordEncoder();
@@ -33,12 +42,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return hierarchy;
     }
 
+    @Bean
     @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication()
-                .withUser("admin").password("123").roles("admin")
-                .and()
-                .withUser("malin").password("123").roles("user");
+    protected UserDetailsService userDetailsService() {
+        JdbcUserDetailsManager manager = new JdbcUserDetailsManager();
+        manager.setDataSource(dataSource);
+        if (!manager.userExists("admin")) {
+            manager.createUser(User.withUsername("admin").password("123").roles("admin").build());
+        }
+        if (!manager.userExists("malin")) {
+            manager.createUser(User.withUsername("malin").password("123").roles("user").build());
+        }
+        return manager;
     }
 
     @Override

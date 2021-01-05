@@ -465,3 +465,21 @@ https://blog.csdn.net/hry2015/article/details/96382707
 ![image-20201229143807943](OAuth2.0.assets/image-20201229143807943.png)
 
 ![image-20201229143824704](OAuth2.0.assets/image-20201229143824704.png)
+
+## VM Docker mysql Communications link failure
+
+排查出病因 NAT 网卡  需要修改mysql 的 配置文件 增加`bind-address = your-vms-ip` 的配置
+
+https://stackoverflow.com/questions/6705874/trying-to-connect-to-mysql-database-with-jdbc
+
+下载vim修改文件的方式
+
+https://www.cnblogs.com/luoyeluoy/p/13065323.html  
+
+通过替换容器文件的方式
+
+https://blog.csdn.net/zhaoyajie1011/article/details/98623666
+
+
+
+> 问题最终还是没有解决，猜想是因为ip的原因。后来换了Postgresql作为仓储层。
