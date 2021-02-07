@@ -25,3 +25,18 @@ https://github.com/happyfish100/fastdfs/wiki
   - https://blog.csdn.net/weixin_44104367/article/details/103048938
 - 不使用官方的 java client，使用其他开源的
   - https://github.com/tobato/FastDFS_Client
+
+
+
+# FAQ
+
+
+
+## 切换fastdfs安装目录后
+
+[root@test nginx-1.15.4]# /etc/init.d/fdfs_trackerd start
+-bash: /etc/init.d/fdfs_trackerd: No such file or directory
+
+
+
+经过排查
