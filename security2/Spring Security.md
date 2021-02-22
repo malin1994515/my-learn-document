@@ -332,4 +332,19 @@ public String foo(@AuthenticationPrincipal User user) {
 
 
 
-## Processing Secure Method Asynchronously
+### Processing Secure Methods Asynchronously
+
+由于`SecurityContext`是线程绑定的，因此，如果要执行任何调用secure method方法的后台处理（例如使用@Async），则需要确保传播该上下文。归结为将`SecurityContext`于后台执行的任务(`Runnable`、`Callable`等)包装在一起。Spring Security提供了一些帮助程序，例如`Runnable`和`Callable`的包装器。要将`SecurityContext`传播到@Async方法，你需要提供`AsyncConfigurer`并确保`Executor`具有正确的类型
+
+```java
+@Configuration
+public class ApplicationConfiguration extends AsyncConfigurerSupport {
+
+  @Override
+  public Executor getAsyncExecutor() {
+    return new DelegatingSecurityContextExecutorService(Executors.newFixedThreadPool(5));
+  }
+
+}
+```
+
