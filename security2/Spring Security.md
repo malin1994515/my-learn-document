@@ -31,6 +31,12 @@ https://github.com/527515025/springBoot
 
 
 
+codecraft(authorization code 模式使用postman验证)
+
+https://segmentfault.com/a/1190000012275317
+
+
+
 # Spring Security 架构
 
 主要参考：https://spring.io/guides/topicals/spring-security-architecture
