@@ -37,6 +37,30 @@ https://segmentfault.com/a/1190000012275317
 
 
 
+spring security (HttpSecurity 关于requestMatchers().antMatchers() 和 authorizeRequests().antMatchers()的区别)
+
+https://book-spring-security-reference.vnzmi.com/3.7_multiple_httpsecurity.html
+
+requestMatchers().antMatchers(`"/oauth/**"`, `"/login/**"`) 表示当前HttpSecurity在哪些uri下生效
+
+authorizeRequests().antMatchers(`"/oauth/**"`).authenticated() 表示在哪些uri下需要进行认证
+
+[Request Matching for Dispatch and Authorization](#Request Matching for Dispatch and Authorization) 其实也与官网的这一节相互呼应，但是官网的描述没有这么直白。
+
+<img src="Spring Security.assets/security-filters-dispatch.png" alt="Security Filter Dispatch" style="zoom:50%;" />
+
+
+
+
+
+spring security sso原理
+
+https://blog.csdn.net/liuminglei1987/article/details/106756132
+
+<img src="Spring Security.assets/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy81RHpUbmJYRFpDNGVLSnFKS0NQN2xvYkk4Y3hhd0F4MXo1UU5EM0FiRkJXcldNalhYQnIzTFpkTmdBcFVkVWwwOEZNR2xjV09SWnlScUNWbElqRFY5US82NDA" alt="img"  />
+
+
+
 # Spring Security 架构
 
 主要参考：https://spring.io/guides/topicals/spring-security-architecture
@@ -353,4 +377,10 @@ public class ApplicationConfiguration extends AsyncConfigurerSupport {
 
 }
 ```
+
+
+
+
+
+
 
