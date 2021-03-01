@@ -17,6 +17,8 @@ spring security 官网
 
 https://spring.io/projects/spring-security/#learn
 
+https://book-spring-security-reference.vnzmi.com/3.7_multiple_httpsecurity.html
+
 
 
 江南一点雨
