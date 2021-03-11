@@ -1,0 +1,10 @@
+Response 访问 http://127.0.0.1:8080/index.html
+浏览器出现: failed
+Shell:
+```shell
+$ curl http://127.0.0.1:8080/index.html
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
+curl: (1) Received HTTP/0.9 when not allowed
+```
