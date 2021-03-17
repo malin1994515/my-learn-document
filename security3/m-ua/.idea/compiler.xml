@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="client2" />
+        <module name="ua" />
+        <module name="resource" />
+        <module name="client1" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="client1" target="1.8" />
+      <module name="client2" target="1.8" />
+      <module name="resource" target="1.8" />
+      <module name="ua" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="client1" options="-parameters" />
+      <module name="client2" options="-parameters" />
+      <module name="resource" options="-parameters" />
+      <module name="ua" options="-parameters" />
+    </option>
+  </component>
+</project>
